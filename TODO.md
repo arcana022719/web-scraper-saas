@@ -11,7 +11,7 @@ A full-stack web application for managing web scraping jobs with Next.js 14, Sup
 
 #### 1.1 Supabase Database Setup
 - [x] Create Supabase project and get credentials
-- [ ] Update `.env.local` with actual Supabase URL and API key
+- [x] Update `.env.local` with actual Supabase URL and API key
 - [ ] Configure authentication providers (email, Google, GitHub)
 - [ ] Set up Row Level Security (RLS) policies
 - [ ] Create user profiles table
