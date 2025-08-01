@@ -1,0 +1,118 @@
+/* eslint-disable */
+/* stylelint-disable */
+/* postcss-discard-comments: off */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations for the hero section */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom button hover effects */
+.btn-primary {
+  background-color: #f97316; /* orange-500 */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #ea580c; /* orange-600 */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.25rem);
+}
+
+.btn-secondary {
+  border: 2px solid #f97316; /* orange-500 */
+  color: #f97316; /* orange-500 */
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #f97316; /* orange-500 */
+  color: white;
+}
+
+/* Feature card hover effects */
+.feature-card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid #f3f4f6; /* gray-100 */
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: #fed7aa; /* orange-200 */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient text utilities */
+.gradient-text-orange {
+  background: linear-gradient(to right, #f97316, #ea580c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #f97316; /* orange-500 */
+  outline-offset: 2px;
+}
+
+/* Additional utility classes */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding: 0 2rem;
+  }
+}
