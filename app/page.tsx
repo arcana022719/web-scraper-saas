@@ -38,12 +38,18 @@ export default async function HomePage() {
                 </div>
               ) : (
                 <div className="flex items-center space-x-3">
-                  <button className="text-gray-600 hover:text-gray-900 transition-colors">
+                  <a
+                    href="/auth/signin"
+                    className="text-gray-600 hover:text-gray-900 transition-colors"
+                  >
                     Sign In
-                  </button>
-                  <button className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors">
+                  </a>
+                  <a
+                    href="/auth/signup"
+                    className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors"
+                  >
                     Get Started
-                  </button>
+                  </a>
                 </div>
               )}
             </div>
@@ -65,12 +71,18 @@ export default async function HomePage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <button className="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-colors">
-                {!isSupabaseConfigured ? 'Try Demo (Setup Required)' : 'Start Scraping Now'}
-              </button>
-              <button className="border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-500 hover:text-white transition-colors">
-                Watch Demo
-              </button>
+              <a
+                href={user ? "/dashboard" : "/auth/signup"}
+                className="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-colors text-center"
+              >
+                {user ? 'Go to Dashboard' : 'Start Scraping Now'}
+              </a>
+              <a
+                href="/auth/signin"
+                className="border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-500 hover:text-white transition-colors text-center"
+              >
+                {user ? 'Watch Demo' : 'Sign In'}
+              </a>
             </div>
           </div>
         </div>
