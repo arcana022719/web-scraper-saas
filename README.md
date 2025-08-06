@@ -1,6 +1,21 @@
 # 🕷️ ScrapeMaster - Web Scraper SaaS Platform
 
-A modern, full-stack web application for managing web scraping jobs built with Next.js 14, Supabase, and Python integration.
+A modern,6. **Open [http://localhost:3000](http://localhost:3000)** in your browser
+
+## 📊 Usage
+
+### Creating a Basic Scraping Job
+1. Sign up/Login to your account
+2. Click "Create New Job"
+3. Fill in the details:
+   - **Name**: "Quotes Scraper"
+   - **URL**: "https://quotes.toscrape.com/"
+   - **Container**: ".quote"
+   - **Title**: ".text"
+   - **Author**: ".author"
+4. Click "Create Job"
+5. Click "Run" to execute the scraper
+6. Click "View Results" to see scraped datafull-stack web application for managing web scraping jobs built with Next.js 14, Supabase, and Python integration.
 
 ![ScrapeMaster Preview](https://via.placeholder.com/800x400/f97316/ffffff?text=ScrapeMaster+SaaS+Platform)
 
@@ -19,7 +34,7 @@ A modern, full-stack web application for managing web scraping jobs built with N
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Styling**: Tailwind CSS, Custom animations
 - **Backend**: Supabase (Database, Auth, Storage)
-- **Scraping**: Python with Selenium & BeautifulSoup
+- **Scraping**: Cheerio for server-side HTML parsing
 - **Deployment**: Vercel
 - **Database**: PostgreSQL (via Supabase)
 
@@ -47,7 +62,12 @@ A modern, full-stack web application for managing web scraping jobs built with N
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
    ```
 
-4. **Run the development server**
+4. **Set up database**
+   - Go to your Supabase dashboard
+   - Run the SQL from `database/safe-schema.sql`
+   - Run the SQL from `database/rls-policies.sql`
+
+5. **Run the development server**
    ```bash
    npm run dev
    ```
@@ -83,23 +103,37 @@ web-scraper-saas/
 │   ├── layout.tsx         # Root layout
 │   └── page.tsx           # Landing page
 ├── components/            # Reusable React components
+│   ├── CreateJobModal.tsx # Job creation form
+│   ├── JobResultsModal.tsx # Results viewer
+│   ├── JobDetailsModal.tsx # Job editor
+│   ├── BulkJobModal.tsx   # Bulk job creation
+│   └── StatusBadge.tsx    # Status indicators
 ├── utils/                 # Utility functions
-│   └── supabaseClient.ts  # Supabase configuration
+│   ├── supabaseClient.ts  # Supabase configuration
+│   └── helpers.ts         # Utility functions
+├── database/             # Database schema and policies
+│   ├── safe-schema.sql   # Database tables
+│   └── rls-policies.sql  # Row Level Security
 ├── public/               # Static assets
-└── scraper.py           # Python scraping script
+└── DEPLOYMENT.md        # Deployment guide
 ```
 
 ## 🔧 Development Roadmap
 
 See [TODO.md](./TODO.md) for detailed development phases and tasks.
 
-### Current Status: ✅ Phase 1 Ready
+### Current Status: ✅ All Features Complete
 - [x] Landing page with modern design
 - [x] Project structure and configuration
 - [x] Supabase integration setup
-- [ ] Authentication implementation
-- [ ] Dashboard and job management
-- [ ] Python scraper integration
+- [x] Authentication implementation
+- [x] Dashboard and job management
+- [x] Web scraping engine with Cheerio
+- [x] Job creation, editing, and deletion
+- [x] Real-time status tracking
+- [x] Results viewer with CSV/JSON export
+- [x] Bulk job creation
+- [x] Row Level Security (RLS)
 
 ## 🤝 Contributing
 
